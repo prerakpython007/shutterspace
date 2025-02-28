@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "./ui/button";
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 
 export default function Nav() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -28,7 +29,12 @@ export default function Nav() {
               Upload
             </Link>
             <div>
-                <Button>Sign In</Button>
+                <SignedOut>
+                  <SignInButton />
+                </SignedOut>
+                <SignedIn>
+                  <UserButton />
+                </SignedIn>
             </div>
           </div>
             
@@ -80,6 +86,14 @@ export default function Nav() {
               >
                 Upload
               </Link>
+              <div>
+                <SignedOut>
+                  <SignInButton />
+                </SignedOut>
+                <SignedIn>
+                  <UserButton />
+                </SignedIn>
+            </div>
             </div>
           </div>
         )}

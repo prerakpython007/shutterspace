@@ -1,9 +1,7 @@
 import { db } from "~/server/db";
 import { images } from "~/server/db/schema";
 
-export const dynamic =  "force-dynamic";
-
-
+export const revalidate = 0;
 
 export default async function HomePage() {
 

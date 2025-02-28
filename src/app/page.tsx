@@ -8,7 +8,7 @@ const mockUrls = [
   "https://mryx17lej8.ufs.sh/f/HzaylkhOXuVEuqk3SgEE2xwpnG5XgqVL1vBt6sdym78WhZHl",
 ]
 
-const mockImages = mockUrls.map((url , index)=> ({
+const mockImages = mockUrls.map((url, index) => ({
   id: index + 1,
   url,
 }))
@@ -17,9 +17,9 @@ export default function HomePage() {
   return (
     <main className="">
       <div className="flex flex-wrap gap-4">
-        {mockImages.map((image) => (
-          <div key={image.id} className="w-56 p-5">
-            <img src={image.url}  alt="img" />
+        {[...mockImages, ...mockImages, ...mockImages].map((image, index) => (
+          <div key={`image-${index}`} className="w-56 p-5">
+            <img src={image.url} alt={`Image ${index + 1}`} />
           </div>
         ))}
       </div>
